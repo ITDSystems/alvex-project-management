@@ -1,0 +1,11 @@
+<webscript>
+  <shortname>emails</shortname>
+  <description><![CDATA[
+  Returns list of emails in specified folder
+  ]]></description>
+  <url>/api/alvex/emails/{folder}</url>
+  <format default="json"/>
+  <authentication>user</authentication>
+  <transaction>required</transaction>
+  <lifecycle>public_api</lifecycle>
+</webscript>

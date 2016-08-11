@@ -1,0 +1,204 @@
+.task-list-toolbar
+{
+   margin: 0px -10px;   
+}
+
+.task-list-toolbar .header-bar
+{
+   clear: both;
+   min-height: 1.7em;
+   padding: 4px 0.5em 9px;
+}
+
+.task-list-toolbar .hidden
+{
+   visibility: hidden;
+}
+
+.task-list-toolbar .left
+{
+   float: left;
+}
+
+.task-list-toolbar .right
+{
+   float: right;
+}
+
+.task-list-toolbar .header-actions
+{
+   margin-top: 0.5em;
+   float: left;
+}
+
+.task-list-toolbar .start-workflow span.first-child
+{
+   background: url("../images/workflow-16.png") no-repeat scroll 12px 4px transparent;
+   padding-left: 22px;
+}
+
+.task-list-toolbar .configure-page span.first-child
+{
+   background: url("../images/edit-16.png") no-repeat scroll 12px 4px transparent;
+   padding-left: 22px;
+}
+
+.task-delayed
+{
+   padding-left: 1.5em;
+   background: url(../images/warning-16.png) no-repeat;
+}
+
+.column-config-container
+{
+	padding: 0.5em;
+}
+
+.column-config-label
+{
+	padding: 0.5em;
+}
+
+div.column-config-dialog-body
+{
+	height: 275px;
+}
+
+div.used
+{
+	padding-bottom: 20px;
+	padding-top: 20px;
+	padding-left: 20px;
+	width: 350px;
+	float: left;
+}
+
+div.available
+{
+	padding-bottom: 20px;
+	padding-top: 20px;
+	padding-right: 20px;
+	width: 350px;
+	float: right;
+}
+
+h3.padded
+{
+	padding: 1em;
+}
+
+ul.usedList,
+ul.availableList
+{
+	overflow-y: auto;
+	overflow-x: hidden;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px dashed #000000;
+}
+
+ul.usedList
+{
+	height: 180px;
+}
+
+ul.availableList
+{
+	height: 180px;
+}
+
+.tableColumn
+{
+	margin: 0.5em;
+	background-color: #F7F7F7;
+	border: 1px dashed #C3C3C3;
+	width: 300px;
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	text-align: left;
+	border-style: none;
+	border-width: 0;
+	overflow: hidden;
+	cursor: move;
+}
+
+.tableColumn span
+{
+	position: relative;
+	top: 0em;
+	left: 0em;
+	opacity: 1;
+	white-space: nowrap;
+	filter: alpha(opacity=100);
+}
+
+.tableColumn div
+{
+	background-color: #FFFFFF;
+	opacity: 0.01;
+	filter: alpha(opacity=1);
+	height: 2em;
+	position: relative;
+	top: -1.5em;
+	width: 8em;
+}
+
+.alfresco-share .yui-panel .bd .form-fields .set .yui-u.first
+{
+	text-align: left;
+}
+
+// Workflow attach
+
+.action div{
+	float: left;
+	line-height: 1em;
+}
+
+.action span {
+	display: none;
+}
+
+a.alvex-project-workflow-action
+{
+	background-position: 4px 1px;
+	background-repeat: no-repeat;
+	border: 1px solid transparent;
+	padding: 0 0 0 24px;
+	background-image: url(/share/res/components/images/list-16.png);
+}
+
+a:active.alvex-project-workflow-action,
+a:hover.alvex-project-workflow-action
+{
+	background-color: #fff;
+	border: 1px solid #2b6eb5;
+	text-decoration: none;
+}
+
+div.onAttachWorkflow a.alvex-project-workflow-action {
+	background-image: url(/share/res/components/images/add-icon-16.png);
+}
+
+.yui-skin-lightTheme .yui-panel .bd .attach-workflow-dialog
+{
+	padding: 1em;
+}
+
+.yui-skin-lightTheme .yui-panel .bd .attach-workflow-dialog .attach-workflow-dialog-search
+{
+	padding-bottom: 1em;
+}
+
+.yui-skin-lightTheme .yui-panel .bd .attach-workflow-dialog .yui-dt thead
+{
+	display: none;
+}
+
+.yui-skin-lightTheme .yui-panel .bd .attach-workflow-dialog .attach-workflow-dialog-search input[type="text"]
+{
+	width: 350px;
+	line-height: 2em;
+	float: left;
+}

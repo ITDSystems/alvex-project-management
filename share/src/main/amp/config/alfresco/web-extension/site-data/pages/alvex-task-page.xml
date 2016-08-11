@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<page>
+   <title>Task Edit</title>
+   <title-id>page.taskEdit.title</title-id>
+   <description>Page for editing task details</description>
+   <description-id>page.taskEdit.description</description-id>
+   <template-instance>alvex-task-page</template-instance>
+   <authentication>user</authentication>
+   <components>
+
+      <!-- Toolbar -->
+      <component>
+         <region-id>task-toolbar</region-id>
+         <url>/components/alvex/task-toolbar</url>
+      </component>
+
+      <!-- Data Header -->
+      <component>
+         <region-id>task-header</region-id>
+         <url>/components/alvex/task-header</url>
+      </component>
+
+      <!-- Data Form -->
+      <component>
+         <region-id>task-form</region-id>
+         <url>/components/alvex/task-form</url>
+         <properties>
+            <itemKind>task</itemKind>
+            <taskId>{taskId}</taskId>
+            <workflowId>{workflowId}</workflowId>
+            <mode>edit</mode>
+            <formUI>true</formUI>
+            <submitType>json</submitType>
+            <showCaption>true</showCaption>
+            <showCancelButton>true</showCancelButton>
+         </properties>
+      </component>
+
+      <!-- Projects -->
+      <component>
+         <region-id>task-projects</region-id>
+         <url>/components/alvex/task-projects</url>
+      </component>
+
+      <!-- Relations -->
+      <component>
+         <region-id>task-relations</region-id>
+         <url>/components/alvex/task-relations</url>
+      </component>
+
+      <!-- Activities -->
+      <component>
+         <region-id>task-activities</region-id>
+         <url>/components/alvex/task-activities</url>
+      </component>
+
+      <!-- Dates -->
+      <component>
+         <region-id>task-dates</region-id>
+         <url>/components/alvex/task-dates</url>
+      </component>
+
+      <!-- Participants -->
+      <component>
+         <region-id>task-participants</region-id>
+         <url>/components/alvex/task-participants</url>
+      </component>
+
+      <!-- Data Loader -->
+      <component>
+         <region-id>task-data-loader</region-id>
+         <url>/components/data/data-loader</url>
+         <properties>
+            <url>api/alvex/task-instances/{taskId}?detailed=true</url>
+            <eventName>taskDetailedData</eventName>
+            <eventData>data</eventData>
+         </properties>
+      </component>
+      <component>
+         <region-id>workflow-data-loader</region-id>
+         <url>/components/data/data-loader</url>
+         <properties>
+            <url>api/alvex/workflow-instances/{workflowId}?includeTasks=true</url>
+            <eventName>workflowDetailedData</eventName>
+            <eventData>data</eventData>
+         </properties>
+      </component>
+
+   </components>
+</page>

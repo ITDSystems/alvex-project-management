@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- See https://blogs.oracle.com/swchan/entry/servlet_3_0_web_fragment for details -->
+<web-fragment>
+	
+	<filter>
+		<description>Performs Alvex specific page redirects.</description>
+		<filter-name>AlvexUrlRewriteFilter</filter-name>
+		<!-- We use custom class with overloaded configuration loader -->
+		<filter-class>com.alvexcore.share.tools.AlvexUrlRewriteFilter</filter-class>
+		<init-param>
+			<param-name>confPath</param-name>
+			<param-value>alvex-advanced-workflows-urlrewrite.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>logLevel</param-name>
+			<param-value>log4j</param-value>
+		</init-param>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>AlvexUrlRewriteFilter</filter-name>
+		<url-pattern>/page/*</url-pattern>
+	</filter-mapping>
+	
+</web-fragment>

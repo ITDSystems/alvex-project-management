@@ -1,0 +1,212 @@
+.share-form .task-relations
+{
+	padding: 10px;
+	margin-top: 20px;
+}
+
+.task-relations
+{
+   clear: both;
+   padding: 0;
+   min-height: 4em;
+}
+
+.task-relations h1
+{
+   float: left;
+   padding-left: 10px;
+   margin-bottom: 5px;
+}
+
+.task-relations h3
+{
+   float: left;
+   clear: left;
+   padding-left: 10px;
+}
+
+.task-relations .clear
+{
+   clear: both;
+}
+
+.task-relations .message-left
+{
+	float: left;
+}
+
+.task-relations .message-right
+{
+	float: right;
+}
+
+.task-relations .section-header
+{
+	margin-top: 1em;
+	margin-bottom: 1em;
+	margin-right: 2em;
+}
+
+.task-relations .section-action
+{
+	margin-top: 0.75em;
+}
+
+.task-relations div.related-workflow-item 
+{
+	float: left;
+	margin-left: 1em;
+	border: 1px solid;
+	-moz-border-radius: 1em;
+	-webkit-border-radius: 1em;
+	-khtml-border-radius: 1em;
+	border-radius: 1em;
+	padding-left: 0.25em;
+	padding-right: 0.25em;
+	border-color: #ccc;
+}
+
+.task-relations .related-workflow-item span 
+{
+	line-height: 1.5em;
+	vertical-align: middle;
+	float: left;
+}
+
+.task-relations .related-workflow-item span.completed
+{
+	padding-left: 20px;
+	background: url(../images/completed-16.png) no-repeat;
+}
+
+.task-relations .related-workflow-item span.pending
+{
+	padding-left: 20px;
+	background: url(../images/pending-16.png) no-repeat;
+}
+
+.task-relations .action a
+{
+   cursor: pointer;
+   padding: 0em 0.75em;
+}
+
+.task-relations .action div
+{
+   line-height: 1.5em;
+}
+
+.task-relations table
+{
+	width: 100%;
+}
+
+.action span
+{
+	float: left;
+	line-height: 1em;
+}
+
+.action span.title
+{
+	display: none;
+}
+
+a.alvex-related-workflow-action
+{
+	background-position: 4px 1px;
+	background-repeat: no-repeat;
+	border: 1px solid transparent;
+	padding: 0 0 0 24px;
+	background-image: url(/share/res/components/images/list-16.png);
+}
+
+a:active.alvex-related-workflow-action,
+a:hover.alvex-related-workflow-action
+{
+	background-color: #fff;
+	border: 1px solid #2b6eb5;
+	text-decoration: none;
+}
+
+div.onAttachWorkflow a.alvex-related-workflow-action {
+	background-image: url(/share/res/components/images/add-icon-16.png);
+}
+
+div.cancelWorkflow a.alvex-related-workflow-action {
+	background-image: url(/share/res/components/images/remove-icon-16.png);
+}
+
+.yui-skin-lightTheme .yui-panel .bd .attach-workflow-dialog
+{
+	padding: 1em;
+}
+
+.yui-skin-lightTheme .yui-panel .bd .attach-workflow-dialog .attach-workflow-dialog-search
+{
+	padding-bottom: 1em;
+}
+
+.yui-skin-lightTheme .yui-panel .bd .attach-workflow-dialog .yui-dt thead
+{
+	display: none;
+}
+
+.yui-skin-lightTheme .yui-panel .bd .attach-workflow-dialog .attach-workflow-dialog-search input[type="text"]
+{
+	width: 350px;
+	line-height: 2em;
+	float: left;
+}
+
+.yui-skin-lightTheme .task-relations .yui-menu-button .push-button button {
+	background-image: none;
+}
+
+
+.action div{
+	float: left;
+	line-height: 1em;
+}
+
+.action span {
+	display: none;
+}
+
+a.related-workflows-action-link
+{
+	background-position: 4px 1px;
+	background-repeat: no-repeat;
+	border: 1px solid transparent;
+	padding: 0 0 0 24px;
+	background-image: url(/share/res/components/images/list-16.png);
+}
+
+a:active.related-workflows-action-link,
+a:hover.related-workflows-action-link
+{
+	background-color: #fff;
+	border: 1px solid #2b6eb5;
+	text-decoration: none;
+}
+
+div.cancelWorkflow a.related-workflows-action-link {
+	background-image: url(/share/res/components/images/delete-16.png);
+}
+
+div.retrieveDocuments a.related-workflows-action-link {
+	background-image: url(/share/res/components/images/retrieve-documents-16.png);
+}
+
+div.cancelWorkflowDisabled a.related-workflows-action-link {
+	background-image: url(/share/res/components/images/delete-disabled-16.png);
+}
+
+div.retrieveDocumentsDisabled a.related-workflows-action-link {
+	background-image: url(/share/res/components/images/retrieve-documents-disabled-16.png);
+}
+
+.alfresco-share .yui-panel .bd .yui-u.first
+{
+	text-align: left;
+}

@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE beans PUBLIC '-//SPRING//DTD BEAN//EN' 'http://www.springframework.org/dtd/spring-beans.dtd'>
+<beans>
+	
+	<!-- Web scripts -->
+	<bean id="webscript.tasks-instances.task-instances.get"
+				class="com.alvexcore.repo.web.scripts.workflow.TaskInstancesGet"
+				parent="abstractWorkflowWebScript">
+		<property name="serviceRegistry" ref="ServiceRegistry" />
+		<property name="alvexWorkflowService" ref="workflowServiceImpl" />
+	</bean>
+	
+	<bean id="webscript.tasks-instances.task-instances-simple.get"
+				class="com.alvexcore.repo.web.scripts.workflow.TaskInstancesGet"
+				parent="abstractWorkflowWebScript">
+		<property name="serviceRegistry" ref="ServiceRegistry" />
+		<property name="alvexWorkflowService" ref="workflowServiceImpl" />
+	</bean>
+	
+	<bean id="webscript.tasks-instances.task-instance.get"
+				class="com.alvexcore.repo.web.scripts.workflow.TaskInstanceGet"
+				parent="abstractWorkflowWebScript">
+		<property name="alvexWorkflowService" ref="workflowServiceImpl" />
+	</bean>
+	
+	<bean id="webscript.tasks-instances.workflow-instance.get"
+				class="com.alvexcore.repo.web.scripts.workflow.WorkflowInstanceGet"
+				parent="abstractWorkflowWebScript"></bean>
+	
+	<bean id="webscript.workflow-instances-detailed.workflow-instances-detailed.get"
+		class="com.alvexcore.repo.web.scripts.workflow.WorkflowInstancesDetailedGet"
+		parent="abstractWorkflowWebScript">
+			<property name="workflowHelper"><ref bean="alvexWorkflowHelper" /></property>
+	</bean>
+	
+	<bean id="webscript.workflows-discussions.container.get" 
+			  parent="webscript" 
+			  class="com.alvexcore.repo.web.scripts.WorkflowDiscussionContainerGet" />
+	
+	<!-- Orgchart-aware WorkflowPermissionInterceptor -->
+	<bean id="WorkflowService_security" class="com.alvexcore.repo.security.AlvexWorkflowPermissionInterceptor" >
+		<property name="workflowService"><ref bean="workflowServiceImpl" /></property>
+		<property name="authorityService"><ref bean="authorityService"/></property>
+		<property name="workflowHelper"><ref bean="alvexWorkflowHelper" /></property>
+	</bean>	
+	
+	<!-- Orgchart-aware WorkflowService -->
+	<bean id="workflowServiceImpl" class="com.alvexcore.repo.workflow.AlvexWorkflowServiceImpl">
+		<property name="serviceRegistry" ref="ServiceRegistry" />
+		<property name="transactionService" ref="transactionService"/>
+		<property name="authorityService" ref="authorityService"/>
+		<property name="BPMEngineRegistry" ref="bpm_engineRegistry"/>
+		<property name="workflowPackageComponent" ref="workflowPackageImpl"/>
+		<property name="nodeService" ref="nodeService"/>
+		<property name="contentService" ref="contentService"/>
+
+		<property name="dictionaryService" ref="dictionaryService"/>
+		<property name="protectedNodeService" ref="NodeService"/>
+		<property name="workflowAdminService" ref="workflowAdminService"/>
+		<property name="workflowNotification" ref="workflowNotification"/>
+		<property name="maxAuthoritiesForPooledTasks">
+			<value>${system.workflow.maxAuthoritiesForPooledTasks}</value>
+		</property>
+		<property name="maxPooledTasks">
+			<value>${system.workflow.maxPooledTasks}</value>
+		</property>
+		<property name="multiTenantWorkflowDeploymentEnabled">
+			<value>${system.workflow.deployWorkflowsInTenant}</value>
+		</property>
+		<property name="orgchartService" ref="alvexOrgchartService"/>
+	</bean>
+	
+	<!-- Workflow helper -->
+	<bean id="alvex-workflow-helper-transaction"
+		class="org.alfresco.repo.transaction.RetryingTransactionInterceptor">
+		<property name="transactionService" ref="TransactionService" />
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*exists">${server.transaction.mode.readOnly}</prop>
+				<prop key="*Exists">${server.transaction.mode.readOnly}</prop>
+				<prop key="is*">${server.transaction.mode.readOnly}</prop>
+				<prop key="resolve*">${server.transaction.mode.readOnly}</prop>
+				<prop key="get*">${server.transaction.mode.readOnly}</prop>
+				<prop key="*">${server.transaction.mode.default}</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="alvexWorkflowHelper" class="com.alvexcore.repo.tools.WorkflowHelperImpl">
+		<property name="serviceRegistry" ref="ServiceRegistry" />
+		<property name="personService"><ref bean="personService"/></property>
+		<property name="authorityService"><ref bean="authorityService"/></property>
+		<property name="orgchartService"><ref bean="alvexOrgchartService" /></property>
+	</bean>
+	<bean id="AlvexWorkflowHelper" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target" ref="alvexWorkflowHelper" />
+		<property name="proxyInterfaces">
+			<list>
+				<value>com.alvexcore.repo.tools.WorkflowHelper</value>
+			</list>
+		</property>
+		<property name="interceptorNames">
+			<list>
+				<idref bean="alvex-workflow-helper-transaction" />
+			</list>
+		</property>
+	</bean>
+	<alias name="AlvexWorkflowHelper" alias="alvex-workflow-helper" />
+	<bean id="alvex-workflow-helper-js" parent="baseJavaScriptExtension"
+		class="com.alvexcore.repo.tools.JscriptWorkflowHelper">
+		<property name="extensionName">
+			<value>workflowHelper</value>
+		</property>
+		<property name="workflowHelper" ref="alvex-workflow-helper" />
+	</bean>
+	
+	<!-- Related workflows service -->
+	<bean id="alvex-related-workflows-transaction"
+		class="org.alfresco.repo.transaction.RetryingTransactionInterceptor">
+		<property name="transactionService" ref="TransactionService" />
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*exists">${server.transaction.mode.readOnly}</prop>
+				<prop key="*Exists">${server.transaction.mode.readOnly}</prop>
+				<prop key="is*">${server.transaction.mode.readOnly}</prop>
+				<prop key="resolve*">${server.transaction.mode.readOnly}</prop>
+				<prop key="get*">${server.transaction.mode.readOnly}</prop>
+				<prop key="*">${server.transaction.mode.default}</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="alvexRelatedWorkflowsService" class="com.alvexcore.repo.AlvexRelatedWorkflowsServiceImpl">
+		<property name="serviceRegistry" ref="ServiceRegistry" />
+		<property name="workflowService" ref="WorkflowService" />
+	</bean>
+	<bean id="AlvexRelatedWorkflowsService" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target" ref="alvexRelatedWorkflowsService" />
+		<property name="proxyInterfaces">
+			<list>
+				<value>com.alvexcore.repo.AlvexRelatedWorkflowsService</value>
+			</list>
+		</property>
+		<property name="interceptorNames">
+			<list>
+				<idref bean="alvex-related-workflows-transaction" />
+			</list>
+		</property>
+	</bean>
+	<alias name="AlvexRelatedWorkflowsService" alias="alvex-related-workflows-service" />
+	<bean id="alvex-related-workflows-service-js" parent="baseJavaScriptExtension"
+		class="com.alvexcore.repo.JsAlvexRelatedWorkflowsService">
+		<property name="extensionName">
+			<value>relatedWorkflows</value>
+		</property>
+		<property name="alvexRelatedWorkflowsService" ref="alvex-related-workflows-service" />
+		<property name="serviceRegistry" ref="ServiceRegistry" />
+	</bean>
+	
+	<!-- Models and so on -->
+	<bean id="alvex-advanced-workflows-deployer" parent="dictionaryModelBootstrap" depends-on="dictionaryBootstrap">
+		<!-- Register resource bundles -->
+		<!--property name="labels">
+			<list>
+				<value></value>
+			</list>
+		</property!-->
+		<!-- Register models -->
+		<property name="models">
+			<list>
+				<value>alfresco/module/${project.artifactId}/model/alvex-advanced-workflows-model.xml</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="alvex-advanced-workflows" class="com.alvexcore.repo.AdvancedWorkflowsExtension"
+					depends-on="" parent="alvex-extension">
+		<property name="workflowDiscussionsContaingerGet" ref="webscript.workflows-discussions.container.get" />
+	</bean>
+</beans>

@@ -1,0 +1,6 @@
+<webscript>
+	<shortname>projects-summary</shortname>
+	<description>Simple dashlet that shows summary of current projects</description>
+	<family>dashlet</family>
+	<url>/components/dashlets/projects-summary</url>
+</webscript>

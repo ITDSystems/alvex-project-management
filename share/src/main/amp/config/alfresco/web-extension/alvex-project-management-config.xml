@@ -1,0 +1,248 @@
+<alfresco-config>
+
+	<config evaluator="model-type" condition="alvexcm:conversationItem">
+		<forms>
+			<!-- Create Form -->
+			<form>
+				<field-visibility>
+					<show id="alvexcm:conversationType" />
+					<show id="alvexcm:conversationDate" />
+					<show id="alvexcm:conversationParticipants" />
+					<show id="alvexcm:conversationSummary" />
+					<show id="alvexcm:conversationDetails" />
+					<show id="alvexcm:conversationAttachments" />
+				</field-visibility>
+				<create-form template="/org/alfresco/components/data-lists/forms/dataitem.ftl" />
+				<appearance>
+					<set id="first" appearance="" label="" template="/org/alfresco/components/form/3-column-set.ftl" />
+					<set id="second" appearance="" label="" />
+					<field set="first" id="alvexcm:conversationType" />
+					<field set="first" id="alvexcm:conversationDate">
+						<control template="/alvex-autodate.ftl"/>
+					</field>
+					<field set="first" id="alvexcm:conversationParticipants">
+						<control template="/orgchart-picker.ftl"/>
+					</field>
+					<field set="second" id="alvexcm:conversationSummary">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl">
+							<control-param name="style">width: 98%</control-param>
+						</control>
+					</field>
+					<field set="second" id="alvexcm:conversationDetails">
+						<control template="/org/alfresco/components/form/controls/textarea.ftl">
+							<control-param name="style">width: 98%</control-param>
+						</control>
+					</field>
+					<field set="second" id="alvexcm:conversationAttachments">
+						<control template="/alvex-uploader.ftl">
+							<control-param name="uploadDirectory">uploads</control-param>
+							<control-param name="createUploadDirectory">true</control-param>
+							<control-param name="viewType">mini</control-param>
+						</control>
+					</field>
+				</appearance>
+			</form>
+		</forms>
+	</config>
+
+	<config evaluator="node-type" condition="alvexcm:conversationItem">
+		<forms>
+			<!-- View / Edit Form -->
+			<form>
+				<field-visibility>
+					<show id="alvexcm:conversationType" />
+					<show id="alvexcm:conversationDate" />
+					<show id="alvexcm:conversationParticipants" />
+					<show id="alvexcm:conversationSummary" />
+					<show id="alvexcm:conversationDetails" />
+					<show id="alvexcm:conversationAttachments" />
+				</field-visibility>
+				<view-form template="/org/alfresco/components/data-lists/forms/dataitem.ftl" />
+				<edit-form template="/org/alfresco/components/data-lists/forms/dataitem.ftl" />
+				<appearance>
+					<set id="first" appearance="" label="" template="/org/alfresco/components/form/3-column-set.ftl" />
+					<set id="second" appearance="" label="" />
+					<field set="first" id="alvexcm:conversationType" />
+					<field set="first" id="alvexcm:conversationDate">
+						<control template="/alvex-autodate.ftl"/>
+					</field>
+					<field set="first" id="alvexcm:conversationParticipants">
+						<control template="/orgchart-picker.ftl"/>
+					</field>
+					<field set="second" id="alvexcm:conversationSummary">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl">
+							<control-param name="style">width: 98%</control-param>
+						</control>
+					</field>
+					<field set="second" id="alvexcm:conversationDetails">
+						<control template="/alvex-mltext.ftl">
+							<control-param name="style">width: 98%</control-param>
+						</control>
+					</field>
+					<field set="second" id="alvexcm:conversationAttachments">
+						<control template="/alvex-uploader.ftl">
+							<control-param name="uploadDirectory">uploads</control-param>
+							<control-param name="createUploadDirectory">true</control-param>
+							<control-param name="viewType">mini</control-param>
+						</control>
+					</field>
+				</appearance>
+			</form>
+		</forms>
+	</config>
+
+	<config evaluator="model-type" condition="alvexcm:externalContact">
+		<forms>
+			<!-- Create Form -->
+			<form>
+				<field-visibility>
+					<show id="alvexcm:contactFirstName" />
+					<show id="alvexcm:contactLastName" />
+					<show id="alvexcm:contactCompany" />
+					<show id="alvexcm:contactPosition" />
+					<show id="alvexcm:contactPhone" />
+					<show id="alvexcm:contactEmail" />
+				</field-visibility>
+				<create-form template="/org/alfresco/components/data-lists/forms/dataitem.ftl" />
+				<appearance>
+					<set id="person" appearance="" label="" template="/org/alfresco/components/form/2-column-set.ftl" />
+					<set id="company" appearance="" label="" template="/org/alfresco/components/form/2-column-set.ftl" />
+					<set id="contacts" appearance="" label="" template="/org/alfresco/components/form/2-column-set.ftl" />
+					<field set="person" id="alvexcm:contactFirstName">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl">
+							<control-param name="style">width: 98%</control-param>
+						</control>
+					</field>
+					<field set="person" id="alvexcm:contactLastName">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl">
+							<control-param name="style">width: 98%</control-param>
+						</control>
+					</field>
+					<field set="company" id="alvexcm:contactCompany">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl">
+							<control-param name="style">width: 98%</control-param>
+						</control>
+					</field>
+					<field set="company" id="alvexcm:contactPosition">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl">
+							<control-param name="style">width: 98%</control-param>
+						</control>
+					</field>
+					<field set="contacts" id="alvexcm:contactPhone">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl">
+							<control-param name="style">width: 98%</control-param>
+						</control>
+					</field>
+					<field set="contacts" id="alvexcm:contactEmail">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl">
+							<control-param name="style">width: 98%</control-param>
+						</control>
+					</field>
+				</appearance>
+			</form>
+		</forms>
+	</config>
+
+	<config evaluator="node-type" condition="alvexcm:externalContact">
+		<forms>
+			<!-- View / Edit Form -->
+			<form>
+				<field-visibility>
+					<show id="alvexcm:contactFirstName" />
+					<show id="alvexcm:contactLastName" />
+					<show id="alvexcm:contactCompany" />
+					<show id="alvexcm:contactPosition" />
+					<show id="alvexcm:contactPhone" />
+					<show id="alvexcm:contactEmail" />
+				</field-visibility>
+				<view-form template="/org/alfresco/components/data-lists/forms/dataitem.ftl" />
+				<edit-form template="/org/alfresco/components/data-lists/forms/dataitem.ftl" />
+				<appearance>
+					<set id="person" appearance="" label="" template="/org/alfresco/components/form/2-column-set.ftl" />
+					<set id="company" appearance="" label="" template="/org/alfresco/components/form/2-column-set.ftl" />
+					<set id="contacts" appearance="" label="" template="/org/alfresco/components/form/2-column-set.ftl" />
+					<field set="person" id="alvexcm:contactFirstName">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl">
+							<control-param name="style">width: 98%</control-param>
+						</control>
+					</field>
+					<field set="person" id="alvexcm:contactLastName">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl">
+							<control-param name="style">width: 98%</control-param>
+						</control>
+					</field>
+					<field set="company" id="alvexcm:contactCompany">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl">
+							<control-param name="style">width: 98%</control-param>
+						</control>
+					</field>
+					<field set="company" id="alvexcm:contactPosition">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl">
+							<control-param name="style">width: 98%</control-param>
+						</control>
+					</field>
+					<field set="contacts" id="alvexcm:contactPhone">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl">
+							<control-param name="style">width: 98%</control-param>
+						</control>
+					</field>
+					<field set="contacts" id="alvexcm:contactEmail">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl">
+							<control-param name="style">width: 98%</control-param>
+						</control>
+					</field>
+				</appearance>
+			</form>
+		</forms>
+	</config>
+
+	<config evaluator="model-type" condition="alvexcm:checkListItem">
+		<forms>
+			<!-- Create Form -->
+			<form>
+				<field-visibility>
+					<show id="alvexcm:checkListItemStatus" />
+					<show id="alvexcm:checkListItemSummary" />
+					<show id="alvexcm:checkListItemDueDate" />
+				</field-visibility>
+				<create-form template="/org/alfresco/components/data-lists/forms/dataitem.ftl" />
+				<appearance>
+					<set id="first" appearance="" label="" template="/alvex-2-column-set-wide-right.ftl" />
+					<field set="first" id="alvexcm:checkListItemStatus" />
+					<field set="first" id="alvexcm:checkListItemSummary">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl">
+							<control-param name="style">width: 98%</control-param>
+						</control>
+					</field>
+					<field set="first" id="alvexcm:checkListItemDueDate" />
+				</appearance>
+			</form>
+		</forms>
+	</config>
+
+	<config evaluator="node-type" condition="alvexcm:checkListItem">
+		<forms>
+			<!-- View / Edit Form -->
+			<form>
+				<field-visibility>
+					<show id="alvexcm:checkListItemStatus" />
+					<show id="alvexcm:checkListItemSummary" />
+					<show id="alvexcm:checkListItemDueDate" />
+				</field-visibility>
+				<view-form template="/org/alfresco/components/data-lists/forms/dataitem.ftl" />
+				<edit-form template="/org/alfresco/components/data-lists/forms/dataitem.ftl" />
+				<appearance>
+					<set id="first" appearance="" label="" template="/alvex-2-column-set-wide-right.ftl" />
+					<field set="first" id="alvexcm:checkListItemStatus" />
+					<field set="first" id="alvexcm:checkListItemSummary">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl">
+							<control-param name="style">width: 98%</control-param>
+						</control>
+					</field>
+					<field set="first" id="alvexcm:checkListItemDueDate" />
+				</appearance>
+			</form>
+		</forms>
+	</config>
+
+</alfresco-config>

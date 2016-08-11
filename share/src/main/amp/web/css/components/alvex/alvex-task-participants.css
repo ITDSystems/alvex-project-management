@@ -1,0 +1,31 @@
+.task-participants
+{
+   clear: both;
+   padding: 0;
+   min-height: 4em;
+   width: 300px;
+}
+
+.task-participants h2
+{
+	padding-bottom: 0.5em;
+	padding-top: 1.5em;
+}
+
+.task-participants .clear
+{
+   clear: both;
+}
+
+.task-participants .record
+{
+	margin-bottom: 0.25em;
+}
+
+.task-participants .record img
+{
+	float: left;
+	width: 24px;
+	height: 24px;
+	padding: 4px;
+}

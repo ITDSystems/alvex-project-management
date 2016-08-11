@@ -1,0 +1,11 @@
+<webscript>
+  <shortname>projects-status</shortname>
+  <description><![CDATA[
+  Returns projects status
+  ]]></description>
+  <url>/api/alvex/projects/status</url>
+  <format default="json"/>
+  <authentication>user</authentication>
+  <transaction>required</transaction>
+  <lifecycle>public_api</lifecycle>
+</webscript>
