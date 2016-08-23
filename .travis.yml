@@ -1,0 +1,28 @@
+sudo: false
+
+language: java
+jdk:
+  - oraclejdk8
+
+cache:
+    directories:
+        - $HOME/.m2
+        - $HOME/apache-maven-3.3.9
+
+before_script:
+    - wget https://raw.githubusercontent.com/ITDSystems/alvex-common/master/scripts/mvn.sh
+    - chmod +x mvn.sh
+
+script:
+    - rm -rf $HOME/.m2/repository/com/alvexcore
+    - ./mvn.sh -f repo/pom.xml clean package
+    - ./mvn.sh -f repo/pom.xml clean package -P make-jar
+    - ./mvn.sh -f share/pom.xml clean package
+    - ./mvn.sh -f share/pom.xml clean package -P make-jar
+
+notifications:
+  email:
+    recipients:
+      - alvex-build@itdhq.com
+    on_success: change
+    on_failure: always
