@@ -26,19 +26,19 @@
         <dependency>
             <groupId>com.alvexcore.share</groupId>
             <artifactId>orgchart</artifactId>
-            <version>1.1</version>
+            <version>1.29-SNAPSHOT</version>
             <classifier>installable</classifier>
         </dependency>
         <dependency>
             <groupId>com.alvexcore.share</groupId>
             <artifactId>utils</artifactId>
-            <version>1.1</version>
+            <version>1.19-SNAPSHOT</version>
             <classifier>installable</classifier>
         </dependency>
         <dependency>
             <groupId>com.alvexcore.share</groupId>
             <artifactId>custom-workflows</artifactId>
-            <version>1.1</version>
+            <version>1.22-SNAPSHOT</version>
             <classifier>installable</classifier>
         </dependency>
     </dependencies>
