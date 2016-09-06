@@ -11,16 +11,37 @@
     <parent>
         <groupId>com.alvexcore.repo</groupId>
         <artifactId>master</artifactId>
-        <version>1.1</version>
+        <version>1.2</version>
     </parent>
 
-    <repositories>
-        <repository>
-            <id>itd-repository</id>
-            <name>ITD Maven Repository</name>
-            <url>http://maven.itdhq.com/pub/repository</url>
-        </repository>
-    </repositories>
+	<repositories>
+		<repository>
+            <id>itd-nexus-releases</id>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+				<checksumPolicy>fail</checksumPolicy>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<url>http://nexus.itdhq.com/content/repositories/releases/</url>
+			<layout>default</layout>
+		</repository>
+		<repository>
+            <id>itd-nexus-snapshots</id>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+				<checksumPolicy>fail</checksumPolicy>
+			</snapshots>
+			<url>http://nexus.itdhq.com/content/repositories/snapshots/</url>
+			<layout>default</layout>
+		</repository>
+	</repositories>
 
     <dependencies>
         <dependency>
