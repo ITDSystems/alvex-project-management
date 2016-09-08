@@ -33,20 +33,20 @@
 
 .task-list-toolbar .start-workflow span.first-child
 {
-   background: url("../images/workflow-16.png") no-repeat scroll 12px 4px transparent;
+   background: url(/share/res/components/images/workflow-16.png) no-repeat scroll 12px 4px transparent;
    padding-left: 22px;
 }
 
 .task-list-toolbar .configure-page span.first-child
 {
-   background: url("../images/edit-16.png") no-repeat scroll 12px 4px transparent;
+   background: url(/share/res/components/images/images/edit-16.png) no-repeat scroll 12px 4px transparent;
    padding-left: 22px;
 }
 
 .task-delayed
 {
    padding-left: 1.5em;
-   background: url(../images/warning-16.png) no-repeat;
+   background: url(/share/res/components/images/warning-16.png) no-repeat;
 }
 
 .column-config-container

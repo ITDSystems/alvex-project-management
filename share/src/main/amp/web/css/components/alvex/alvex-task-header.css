@@ -27,7 +27,7 @@
 
 .task-header .unassigned-message span
 {
-   background: left no-repeat url(../images/info-16.png);
+   background: left no-repeat url(/share/res/components/images/info-16.png);
    padding: 1em 2em;
 }
 

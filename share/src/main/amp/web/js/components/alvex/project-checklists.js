@@ -172,7 +172,7 @@ if (typeof Alvex == "undefined" || !Alvex)
 			dataTable.doBeforeLoadData = function ProjectChecklists_doBeforeLoadData(sRequest, oResponse, oPayload)
 			{
 				
-				if (oResponse.results.length() === 0)
+				if (oResponse.results.length === 0)
 				{
 					oResponse.results.unshift(
 					{

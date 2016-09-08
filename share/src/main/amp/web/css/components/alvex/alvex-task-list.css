@@ -208,17 +208,17 @@
 
 .task-list .task-edit-link
 {
-   background-image: url( ../images/edit-16.png );
+   background-image: url(/share/res/components/images/edit-16.png);
 }
 
 .task-list .task-view-link
 {
-   background-image: url( ../images/task-16.png );
+   background-image: url(/share/res/components/images/task-16.png);
 }
 
 .task-list .workflow-view-link
 {
-   background-image: url( ../images/workflow-16.png );
+   background-image: url(/share/res/components/images/workflow-16.png);
 }
 
 .task-list .task-edit-link a,
@@ -257,29 +257,29 @@
 .task-list .task-delayed
 {
    padding-left: 1.5em;
-   background: url(../images/warning-16.png) no-repeat;
+   background: url(/share/res/components/images/warning-16.png) no-repeat;
 }
 
 .task-list span.person
 {
-   background: url(../images/user-16.png) no-repeat;
+   background: url(/share/res/components/images/user-16.png) no-repeat;
    padding-left: 20px;
 }
 
 .task-list span.todo
 {
-   background: url(../images/to-do-16.png) no-repeat;
+   background: url(/share/res/components/images/to-do-16.png) no-repeat;
    padding-left: 20px;
 }
 
 .task-list span.completed
 {
-   background: url(../images/completed-16.png) no-repeat;
+   background: url(/share/res/components/images/completed-16.png) no-repeat;
    padding-left: 20px;
 }
 
 .task-list span.pending
 {
-   background: url(../images/pending-16.png) no-repeat;
+   background: url(/share/res/components/images/pending-16.png) no-repeat;
    padding-left: 20px;
 }

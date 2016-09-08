@@ -57,7 +57,7 @@
 
 .task-edit-header .unassigned-message span
 {
-   background: left no-repeat url(../images/info-16.png);
+   background: left no-repeat url(/share/res/components/images/info-16.png);
    padding: 1em 2em;
 }
 
@@ -68,7 +68,7 @@
 
 .task-edit-header .tree-view button
 {
-   background-image: url( ../images/tree-24.png );
+   background-image: url(/share/res/components/images/tree-24.png );
    text-indent: -4em;
    overflow: hidden;
    width: 2em;
