@@ -59,11 +59,16 @@
       <version>1.29-SNAPSHOT</version>
       <classifier>installable</classifier>
     </dependency>
-
     <dependency>
       <groupId>com.alvexcore.share</groupId>
-      <artifactId>custom-workflows</artifactId>
-      <version>1.22-SNAPSHOT</version>
+      <artifactId>uploader</artifactId>
+      <version>1.37-SNAPSHOT</version>
+      <classifier>installable</classifier>
+    </dependency>
+    <dependency>
+      <groupId>com.alvexcore.share</groupId>
+      <artifactId>workflow-shortcut-dashlet</artifactId>
+      <version>1.16-SNAPSHOT</version>
       <classifier>installable</classifier>
     </dependency>
 
