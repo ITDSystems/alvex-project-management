@@ -47,7 +47,7 @@
 
 .task-details-header .tree-view button
 {
-   background-image: url( ../images/tree-24.png );
+   background-image: url(/share/res/components/images/tree-24.png );
    text-indent: -4em;
    overflow: hidden;
    width: 2em;

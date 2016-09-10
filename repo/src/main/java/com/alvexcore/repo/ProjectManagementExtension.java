@@ -50,8 +50,7 @@ public class ProjectManagementExtension extends RepositoryExtension {
 	// constructor
 	public ProjectManagementExtension() throws Exception {
 		id = "project-management";
-		fileListPath = "alvex-project-management-file-list.txt";
-		extInfoPath = "alvex-project-management.properties";
+
 	}
 
 	@Override

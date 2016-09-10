@@ -382,9 +382,9 @@ if (typeof Alvex == "undefined" || !Alvex)
 			{
 				// Hide the paginator if there are fewer rows than would cause pagination
 				Dom.setStyle(this.configs.paginator.getContainerNodes(), "visibility", 
-							(oResponse.results.length() == 0) ? "hidden" : "visible");
+							(oResponse.results.length == 0) ? "hidden" : "visible");
 
-				if (oResponse.results.length() === 0)
+				if (oResponse.results.length === 0)
 				{
 					oResponse.results.unshift(
 					{

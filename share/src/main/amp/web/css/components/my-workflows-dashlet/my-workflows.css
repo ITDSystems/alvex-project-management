@@ -43,7 +43,7 @@
 .my-workflows .workflow-delayed
 {
    padding-left: 1.5em;
-   background: url(../images/warning-16.png) no-repeat; 
+   background: url(/share/res/components/images/warning-16.png) no-repeat;
 }
 
 .my-workflows a.view-workflow,
@@ -56,12 +56,12 @@
 
 .my-workflows a.view-workflow
 {
-   background: url(../images/task-16.png) no-repeat center;
+   background: url(/share/res/components/images/task-16.png) no-repeat center;
 }
 
 .my-workflows a.edit-workflow
 {
-   background: url(../images/edit-16.png) no-repeat center;
+   background: url(/share/res/components/images/edit-16.png) no-repeat center;
 }
 
 .my-workflows .yui-dt-col-name a:active,

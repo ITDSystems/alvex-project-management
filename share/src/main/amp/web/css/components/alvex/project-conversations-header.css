@@ -34,7 +34,7 @@
 
 .project-conversations-toolbar .add-item span.first-child
 {
-   background: url("../images/add-icon-16.png") no-repeat scroll 12px 4px transparent;
+   background: url(/share/res/components/images/add-icon-16.png) no-repeat scroll 12px 4px transparent;
    padding-left: 22px;
 }
 

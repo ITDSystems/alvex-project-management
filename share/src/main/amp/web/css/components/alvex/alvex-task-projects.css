@@ -82,7 +82,7 @@
 .task-projects .project-item span.project-site
 {
 	padding-left: 32px;
-	background: url(../images/site-16.png) no-repeat;
+	background: url(/share/res/components/images/site-16.png) no-repeat;
 	background-position: 8px 2px;
 }
 

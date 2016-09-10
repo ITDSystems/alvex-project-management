@@ -76,13 +76,13 @@
 .task-relations .related-workflow-item span.completed
 {
 	padding-left: 20px;
-	background: url(../images/completed-16.png) no-repeat;
+	background: url(/share/res/components/images/completed-16.png) no-repeat;
 }
 
 .task-relations .related-workflow-item span.pending
 {
 	padding-left: 20px;
-	background: url(../images/pending-16.png) no-repeat;
+	background: url(/share/res/components/images/pending-16.png) no-repeat;
 }
 
 .task-relations .action a

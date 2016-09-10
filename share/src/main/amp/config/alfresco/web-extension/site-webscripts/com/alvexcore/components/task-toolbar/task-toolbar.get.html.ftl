@@ -6,7 +6,7 @@
 
 <@markup id="js">
    <#-- JavaScript Dependencies -->
-   <@script src="${url.context}/res/components/alvex/alvex-task-toolbar.js" group="workflow"/>
+   <@script src="${url.context}/res/js/components/alvex/alvex-task-toolbar.js" group="workflow"/>
    <@script src="${page.url.context}/res/components/people-finder/people-finder.js" group="workflow"/>
 </@>
 

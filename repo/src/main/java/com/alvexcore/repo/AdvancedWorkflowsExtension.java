@@ -46,8 +46,7 @@ public class AdvancedWorkflowsExtension extends RepositoryExtension {
 	// constructor
 	public AdvancedWorkflowsExtension() throws Exception {
 		id = "advanced-workflows";
-		fileListPath = "alvex-advanced-workflows-file-list.txt";
-		extInfoPath = "alvex-advanced-workflows.properties";
+
 	}
 
 	@Override
