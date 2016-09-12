@@ -1,14 +1,15 @@
-<import resource="classpath:alfresco/templates/org/alfresco/import/alfresco-util.js">
 
-function getDocumentWorkflows(nodeRef)
-{
-   var result = remote.call("/api/alvex/node/" + nodeRef.replace(":/", "") + "/workflow-instances");
-   if (result.status != 200)
-   {
-      AlfrescoUtil.error(result.status, 'Could not load document workflows for ' + nodeRef);
-   }
-   return eval('(' + result + ')');
-}
+<import resource="classpath:/alfresco/templates/org/alfresco/import/alfresco-util.js">
+
+    function getDocumentWorkflows(nodeRef)
+    {
+       var result = remote.call("/api/node/" + nodeRef.replace(":/", "") + "/workflow-instances");
+       if (result.status != 200)
+       {
+          AlfrescoUtil.error(result.status, 'Could not load document workflows for ' + nodeRef);
+       }
+       return JSON.parse(result).data;
+    }
 
 function main()
 {
@@ -18,22 +19,20 @@ function main()
    if (documentDetails)
    {
       model.destination = documentDetails.item.parent.nodeRef
-      var result = getDocumentWorkflows(model.nodeRef);
-      model.activeWorkflows = result.active;
-      model.completedWorkflows = result.completed;
+      model.workflows = getDocumentWorkflows(model.nodeRef);
    }
-   
+
    // Widget instantiation metadata...
    var documentWorkflows = {
-      id : "DocumentWorkflows", 
+      id : "DocumentWorkflows",
       name : "Alfresco.DocumentWorkflows",
       options : {
          nodeRef : model.nodeRef,
          siteId : model.site,
          destination : model.destination
       }
-   };   
+   };
+   model.widgets = [documentWorkflows];
 }
 
 main();
-
