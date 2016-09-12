@@ -46,7 +46,6 @@ public class AdvancedWorkflowsExtension extends RepositoryExtension {
 	// constructor
 	public AdvancedWorkflowsExtension() throws Exception {
 		id = "advanced-workflows";
-
 	}
 
 	@Override
@@ -83,6 +82,7 @@ public class AdvancedWorkflowsExtension extends RepositoryExtension {
 				PermissionService.CONTRIBUTOR, true);
 		addNodeToCache(ID_DISCUSSIONS_DATA_PATH, discDataPath);
 	}
+
 
 	void upgradeConfiguration(String oldVersion, String oldEdition) {
 		//
