@@ -34,8 +34,6 @@ import java.util.Iterator;
 
 import org.alfresco.model.ContentModel;
 import org.alfresco.service.ServiceRegistry;
-
-
 import org.alfresco.service.cmr.dictionary.DictionaryService;
 import org.alfresco.service.cmr.repository.ChildAssociationRef;
 import org.alfresco.service.cmr.repository.ContentReader;

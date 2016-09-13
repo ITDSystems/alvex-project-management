@@ -1,14 +1,14 @@
 <import resource="classpath:alfresco/templates/org/alfresco/import/alfresco-util.js">
 
-function getDocumentWorkflows(nodeRef)
-{
-   var result = remote.call("/api/alvex/node/" + nodeRef.replace(":/", "") + "/workflow-instances");
-   if (result.status != 200)
-   {
-      AlfrescoUtil.error(result.status, 'Could not load document workflows for ' + nodeRef);
-   }
-   return eval('(' + result + ')');
-}
+    function getDocumentWorkflows(nodeRef)
+    {
+       var result = remote.call("/api/alvex/node/" + nodeRef.replace(":/", "") + "/workflow-instances");
+       if (result.status != 200)
+       {
+          AlfrescoUtil.error(result.status, 'Could not load document workflows for ' + nodeRef);
+       }
+       return eval('(' + result + ')');
+    }
 
 function main()
 {
@@ -22,18 +22,17 @@ function main()
       model.activeWorkflows = result.active;
       model.completedWorkflows = result.completed;
    }
-   
+
    // Widget instantiation metadata...
    var documentWorkflows = {
-      id : "DocumentWorkflows", 
+      id : "DocumentWorkflows",
       name : "Alfresco.DocumentWorkflows",
       options : {
          nodeRef : model.nodeRef,
          siteId : model.site,
          destination : model.destination
       }
-   };   
+   };
 }
 
 main();
-
