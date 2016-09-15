@@ -67,7 +67,7 @@
     </dependency>
     <dependency>
       <groupId>com.alvexcore.share</groupId>
-      <artifactId>workflow-shortcut-dashlet</artifactId>
+      <artifactId>workflow-permissions</artifactId>
       <version>1.16-SNAPSHOT</version>
       <classifier>installable</classifier>
     </dependency>
