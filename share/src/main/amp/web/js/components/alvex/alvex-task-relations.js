@@ -139,7 +139,7 @@ if (typeof Alvex == "undefined" || !Alvex)
 				);
 
 			var urlAllowed = YAHOO.lang.substitute(
-				"{proxy}api/alvex/workflow-shortcut/allowed-workflows",
+				"{proxy}api/alvex/workflow-permissions/allowed-workflows",
 				{
 					proxy: Alfresco.constants.PROXY_URI
 				}
