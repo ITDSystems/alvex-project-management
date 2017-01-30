@@ -362,7 +362,7 @@ if (typeof Alvex == "undefined" || !Alvex)
       {
          if (this.workflow.diagramUrl)
          {
-            showLightbox({ src: Alfresco.constants.PROXY_URI + this.workflow.diagramUrl });
+            Alfresco.Lightbox.show({ src: Alfresco.constants.PROXY_URI + this.workflow.diagramUrl });
          }
       },
 
