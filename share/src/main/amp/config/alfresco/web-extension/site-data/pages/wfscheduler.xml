@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<page>
+    <id>wfscheduler-page</id>
+
+    <title>Wfscheduler page</title>
+    <title-id>wfscheduler.page.title</title-id>
+    <description>Wfscheduler edit page</description>
+    <description-id>wfscheduler.page.desc</description-id>
+
+    <template-instance>wfscheduler</template-instance>
+    <authentication>user</authentication>
+</page>

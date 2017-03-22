@@ -1,0 +1,24 @@
+.info-container{
+    height: 45px;
+    width: 200px;
+    position: absolute;
+    font-size: 16px;
+    top: -9px;
+    left: 180px;
+    border-radius: 2px;
+    line-height: 45px;
+}
+
+.info-container.success{
+    color: #18bc9c;
+    border-color: #18bc9c;
+}
+
+.info-container.failure{
+    color: #a94442;
+    border-color: #a94442;
+}
+
+.save-cron-button {
+    position: relative;
+}

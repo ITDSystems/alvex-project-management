@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="wfsch:wfScheduler" xmlns="http://www.alfresco.org/model/dictionary/1.0">
+
+    <!-- Optional meta-data about the model -->
+    <description>Document Model for Repo Extension X</description>
+    <author>My Name</author>
+    <version>1.0</version>
+
+    <imports>
+        <!-- Import Alfresco Dictionary Definitions -->
+        <import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d"/>
+        <!-- Import Alfresco Content Domain Model Definitions -->
+        <import uri="http://www.alfresco.org/model/content/1.0" prefix="cm"/>
+        <!-- Import Alfresco System Model Definitions -->
+        <import uri="http://www.alfresco.org/model/system/1.0" prefix="sys"/>
+    </imports>
+
+    <!-- Custom namespace for your domain -->
+    <namespaces>
+        <namespace uri="http://www.system.ru/model/wfScheduler/1.0" prefix="wfsch"/>
+    </namespaces>
+
+    <types>
+        <type name="wfsch:cronInfo">
+            <title>Store user Shedules</title>
+            <parent>cm:content</parent>
+            <properties>
+                <property name="wfsch:workflowData">
+                    <type>d:content</type>
+                </property>
+            </properties>
+            <associations>
+                <child-association name="wfsch:owner">
+                    <source>
+                        <mandatory>false</mandatory>
+                        <many>false</many>
+                    </source>
+                    <target>
+                        <class>cm:person</class>
+                        <mandatory>false</mandatory>
+                        <many>false</many>
+                    </target>
+                </child-association>
+            </associations>
+        </type>
+    </types>
+</model>

@@ -53,7 +53,27 @@
    <#-- JavaScript Dependencies -->
    <@script src="${url.context}/res/js/components/alvex/task-list-header.js" group="workflow"/>
    <@script src="${url.context}/res/modules/simple-dialog.js" group="workflow"/>
+   <@script src="${url.context}/res/components/wfscheduler/task-list-link-startwf.js" group="workflow"/>
 </@>
+
+<script type="text/javascript">//<![CDATA[
+(function()
+{
+    new Alvex.WfTaskList("${el}").setOptions(
+            {
+                filterParameters: <@filter.jsonParameterFilter filterParameters />,
+                hiddenTaskTypes: <@workflow.jsonHiddenTaskTypes hiddenTaskTypes/>,
+                hiddenWorkflowsNames: [<#list hiddenWorkflowsNames as workflow>"${workflow}"<#if workflow_has_next>, </#if></#list>],
+                maxItems: ${maxItems!"50"},
+                sorters:
+                        {<#list sorters as sorter>
+                            "${sorter.type?js_string}": "${sorter.sortField?js_string}"<#if sorter_has_next>,</#if>
+                        </#list>}
+            }).setMessages(
+    ${messages}
+    );
+})();
+//]]></script>
 
 <@markup id="widgets">
    <@createWidgets group="workflow"/>

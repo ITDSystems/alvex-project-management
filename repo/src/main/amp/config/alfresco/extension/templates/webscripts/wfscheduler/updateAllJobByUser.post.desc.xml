@@ -1,0 +1,9 @@
+<webscript>
+    <shortname>Write job info</shortname>
+    <description>Write job info</description>
+    <url>/wfscheduler/update-jobs?user={user}</url>
+    <format default="json"/>
+    <authentication>user</authentication>
+    <transaction allow="readwrite">required</transaction>
+    <family>wfscheduler</family>
+</webscript>

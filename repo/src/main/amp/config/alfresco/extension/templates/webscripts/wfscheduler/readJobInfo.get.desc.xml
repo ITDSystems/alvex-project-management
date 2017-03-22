@@ -1,0 +1,8 @@
+<webscript>
+    <shortname>Get workflows by user</shortname>
+    <description>Get workflows by user</description>
+    <url>/api/wfscheduler/wfinfo?user={login}</url>
+    <format default="json"/>
+    <authentication>user</authentication>
+    <family>wfscheduler</family>
+</webscript>

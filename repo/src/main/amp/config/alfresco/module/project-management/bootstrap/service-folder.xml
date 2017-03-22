@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view:view xmlns:view="http://www.alfresco.org/view/repository/1.0"
+           xmlns:app="http://www.alfresco.org/model/application/1.0"
+           xmlns:cm="http://www.alfresco.org/model/content/1.0"
+           xmlns:sys="http://www.alfresco.org/model/system/1.0">
+    <cm:folder view:childName="cm:wfschedulerFolder">
+        <view:aspects>
+            <app:uifacets></app:uifacets>
+        </view:aspects>
+        <view:properties>
+            <cm:description>Service folder for store cron</cm:description>
+            <app:icon>space-icon-default</app:icon>
+            <cm:title>WfschedulerFolder</cm:title>
+            <cm:name>WfschedulerFolder</cm:name>
+            <sys:node-uuid>wfscheduler-service-folder</sys:node-uuid>
+        </view:properties>
+    </cm:folder>
+</view:view>

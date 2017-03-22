@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+    <!-- The alvex-wfscheduler-bootstrap-context.xml file is used for patch definitions, importers,
+		 workflow, and loading custom content models.  -->
+
+
+    <!-- Registration of new models -->
+    <bean id="wfsheduler-repo.dictionaryBootstrap" parent="dictionaryModelBootstrap" depends-on="dictionaryBootstrap">
+        <property name="models">
+            <list>
+                <value>alfresco/module/${project.artifactId}/model/alvex-wfscheduler-content-model.xml</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="wfschedulerCreateFolder" parent="spacesBootstrap">
+        <property name="bootstrapViews">
+            <list>
+                <props>
+                    <prop key="path">/${spaces.company_home.childname}/${spaces.dictionary.childname}</prop>
+                    <prop key="location">alfresco/module/${project.artifactId}/bootstrap/service-folder.xml</prop>
+                    <prop key="uuidBinding">UPDATE_EXISTING</prop>
+                </props>
+            </list>
+        </property>
+        <property name="useExistingStore">
+            <value>${wfscheduler.useExistingStore.onBootstrap}</value>
+        </property>
+    </bean>
+</beans>
