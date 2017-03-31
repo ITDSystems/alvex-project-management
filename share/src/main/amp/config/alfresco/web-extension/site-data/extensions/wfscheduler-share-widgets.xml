@@ -1,0 +1,31 @@
+<extension>
+  <modules>
+    <module>
+      <id>Wfscheduler</id>
+      <version>1.0</version>
+      <auto-deploy>true</auto-deploy>
+      <configurations>
+        <config evaluator="string-compare" condition="WebFramework" replace="false">
+          <web-framework>
+            <dojo-pages>
+              <packages>
+                <package name="wfscheduler" location="js/wfscheduler"/>
+                <package name="cron" location="components/wfscheduler" main="jquery-cron"/>
+              </packages>
+            </dojo-pages>
+          </web-framework>
+        </config>
+      </configurations>
+      <customizations>
+        <customization>
+          <targetPackageRoot>org.alfresco.components.profile</targetPackageRoot>
+          <sourcePackageRoot>wfscheduler.profile</sourcePackageRoot>
+        </customization>
+        <customization>
+          <targetPackageRoot>com.alvexcore.components.my-tasks-header</targetPackageRoot>
+          <sourcePackageRoot>wfscheduler.my-tasks-header</sourcePackageRoot>
+        </customization>
+      </customizations>
+    </module>
+  </modules>
+</extension>

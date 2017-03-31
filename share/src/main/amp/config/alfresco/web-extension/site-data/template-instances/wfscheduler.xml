@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template-instance>
+    <template-type>wfscheduler/wfscheduler-page</template-type>
+    <properties>
+        <pageFamily>profile</pageFamily>
+        <container>profile</container>
+    </properties>
+    <components>
+
+        <!-- Title -->
+        <component>
+            <region-id>title</region-id>
+            <url>/components/title/profile-title</url>
+        </component>
+
+        <!-- Toolbar -->
+        <component>
+            <region-id>toolbar</region-id>
+            <url>/components/profile/userprofile-toolbar</url>
+        </component>
+
+        <!--  Scheduler  -->
+        <component>
+            <region-id>wfscheduler</region-id>
+            <url>/components/profile/wfscheduler</url>
+        </component>
+    </components>
+</template-instance>
