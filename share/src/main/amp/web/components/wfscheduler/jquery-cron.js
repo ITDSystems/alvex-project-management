@@ -388,7 +388,7 @@
                 .end();
 
             block["repeat"] = $("<span class='cron-repeat'>"
-                + "<input type='checkbox' class='cron-repeat-checkbox'></input><span>Повторять действие</span>"
+                + "<input type='checkbox' class='cron-repeat-checkbox'></input><span>" + window.msg("cron.repeat") + "</span>"
                 + " </span>").appendTo(this)
                 .find("input.cron-repeat-checkbox")
                 .bind("change.cron", event_handlers.changeRepeater)
