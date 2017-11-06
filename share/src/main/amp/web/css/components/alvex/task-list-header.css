@@ -33,7 +33,7 @@
 
 .task-list-toolbar .start-workflow span.first-child
 {
-   background: url(/share/res/components/images/workflow-16.png) no-repeat scroll 12px 4px transparent;
+   background: url(/share/res/components/images/workflow-16.png) no-repeat scroll 4px 4px transparent;
    padding-left: 22px;
 }
 

@@ -1,3 +1,5 @@
+<@script src="${url.context}/res/components/common/common-component-style-filter-chain.js"/>
+
 <#assign id = args.htmlid>
 <#assign jsid = args.htmlid?js_string>
 

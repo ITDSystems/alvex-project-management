@@ -19,7 +19,7 @@
 
 <beans>
 	<!-- This is filtered by Maven at build time, so that module name is single sourced. -->
-	<!-- Note. The bootstrap-context.xml file has to be loaded first.
+	<!-- Note. The alvex-wfscheduler-bootstrap-context.xml file has to be loaded first.
 				Otherwise your custom models are not yet loaded when your service beans are instantiated and you
 				cannot for example register policies on them. -->
 	<import resource="classpath:alfresco/module/${project.artifactId}/context/alvex-advanced-workflows-context.xml" />
@@ -27,5 +27,9 @@
     <import resource="classpath:alfresco/module/${project.artifactId}/context/alvex-project-management-context.xml" />
     <import resource="classpath:alfresco/module/${project.artifactId}/context/alvex-emails-context.xml" />
 
+    <!-- wfScheduler -->
+    <import resource="classpath:alfresco/module/${project.artifactId}/context/alvex-wfscheduler-bootstrap-context.xml" />
+    <import resource="classpath:alfresco/module/${project.artifactId}/context/alvex-wfscheduler-service-context.xml" />
+    <import resource="classpath:alfresco/module/${project.artifactId}/context/alvex-wfscheduler-webscript-context.xml" />
 
 </beans>

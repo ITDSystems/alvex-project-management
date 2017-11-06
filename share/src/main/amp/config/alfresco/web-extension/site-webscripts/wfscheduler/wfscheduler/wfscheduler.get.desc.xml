@@ -1,0 +1,6 @@
+<webscript>
+	<shortname>Profile page for edit crons</shortname>
+	<description>Profile page for edit crons</description>
+	<family>wfscheduler</family>
+	<url>/components/profile/wfscheduler</url>
+</webscript>
