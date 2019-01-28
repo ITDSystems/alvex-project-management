@@ -1,6 +1,8 @@
+**This extension for Alfresco is obsolete and unsupported. Use it on your own risk.**
+
 [![Build Status](https://travis-ci.org/ITDSystems/alvex-project-management.svg?branch=master)](https://travis-ci.org/ITDSystems/alvex-project-management)
 
-Alvex Project Management (deprecated)
+Alvex Project Management (deprecated since Alfresco 4.2.f)
 ========================
 
 Introduces special spaces in Alfresco Share to store all files and tasks relate to the project. Customizes default workflow-related pages to show information users need.
